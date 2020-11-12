@@ -41,16 +41,23 @@ The maximum possible profit.
 """https://www.youtube.com/watch?v=PV97reU3Vig"""
 
 def buyAndSellStock(prices):
-    answer = 0
+    max_profit = 0
+    # put a large value here and replace as you find a smaller one
     smallest = float("inf")
     
     for i in range(len(prices)):
+        # check if the 
         if prices[i] > smallest:
-            answer = max(answer, prices[i] - smallest)
+            # this replaces another if else for finding profit1 > profit2
+            # profit = max(profit, prices[i] - smallest)
+            profit = (prices[i] - smallest)
+            if profit > max_profit:
+                max_profit = profit
+                print(max_profit)
         else:
             smallest = prices[i]
             
-    return answer
+    return max_profit
     
 
 
