@@ -37,43 +37,20 @@ Guaranteed constraints:
 
 The maximum possible profit.
 """
-"""
+
+"""https://www.youtube.com/watch?v=PV97reU3Vig"""
+
 def buyAndSellStock(prices):
-    # iterate thru day i 
-    max_profit = 0
-    i =0
-    for i in range(len(prices)):
-        j= i + 1
-        # compare day i to day i + x enumerate
-        for j in range(len(prices)):
-            if i == j:
-                break
-            # save largest profit
-            profit = (prices[i] - prices[j])
-            if profit > max_profit:
-                max_profit = profit
-    # return max profit
-    return max_profit
-"""            
-def buyAndSellStock(prices):
-    # find the smallest price and store it
-    smallest = (sorted(prices))[0]
+    answer = 0
+    smallest = float("inf")
     
-    # iterate thru day i 
-    max_profit = 0
-    i =0
     for i in range(len(prices)):
-        j= i + 1
-        # compare day i to day i + x enumerate
-        for j in range(len(prices)):
-            if i == smallest:
-                break
-            # save largest profit
-            profit = (prices[i] - smallest)
-            if profit > max_profit:
-                max_profit = profit
-    # return max profit
-    return max_profit
+        if prices[i] > smallest:
+            answer = max(answer, prices[i] - smallest)
+        else:
+            smallest = prices[i]
+            
+    return answer
     
 
 
