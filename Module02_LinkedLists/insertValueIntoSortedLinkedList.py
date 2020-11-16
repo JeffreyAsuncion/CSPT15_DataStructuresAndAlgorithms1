@@ -45,66 +45,83 @@ Guaranteed constraints:
 Return l after inserting value into it, with the original sorting preserved.
 """
 
+# class ListNode(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.next = None
 
+
+
+# # Singly-linked lists are already defined with this interface:
+# class ListNode(object):
+#     def __init__(self, data=None):
+#       self.data = data
+#       self.next = None
+
+# class linked_list:
+#     def __init__(self):
+#         self.head = ListNode()
+     
+#     def append(self, data):
+#         if self.head is None:
+#             self.head = ListNode(data) # next was head
+#             return 
+#         new_node = ListNode(data)
+#         cur_node = self.head
+#         while cur_node.next != None:
+#             cur_node = cur_node.next
+#         cur_node.next = new_node
+
+#     def display(self):
+#         elems = []
+#         cur_node = self.head
+#         while cur_node.next != None:
+#             cur_node = cur_node.next
+#             elems.append(cur_node.data)
+#         print(elems)
+
+#     def sortedInsert(self, new_node): 
+          
+#         # Special case for the empty linked list  
+#         if self.head is None: 
+#             new_node.next = self.head 
+#             self.head = new_node 
+  
+
+  
+#         else : 
+#             # Locate the node before the point of insertion 
+#             current = self.head 
+#             while(current.next is not None and
+#                  current.next.data < new_node.data): 
+#                 current = current.next
+              
+#             new_node.next = current.next
+#             current.next = new_node 
+
+# def insertValueIntoSortedLinkedList(l, value):
+
+#     llist = linked_list()
+#     for num in l:
+#         llist.append(num)
+#     llist.sortedInsert(ListNode(value))
+#     #llist.insert_values(l)
+#     llist.display()
+"""
 # Singly-linked lists are already defined with this interface:
 class ListNode(object):
-    def __init__(self, data=None):
-      self.data = data
-      self.next = None
-
-class linked_list:
-    def __init__(self):
-        self.head = ListNode()
-     
-    def append(self, data):
-        if self.head is None:
-            self.head = ListNode(data) # next was head
-            return 
-        new_node = ListNode(data)
-        cur_node = self.head
-        while cur_node.next != None:
-            cur_node = cur_node.next
-        cur_node.next = new_node
-
-    def display(self):
-        elems = []
-        cur_node = self.head
-        while cur_node.next != None:
-            cur_node = cur_node.next
-            elems.append(cur_node.data)
-        print(elems)
-
-    def sortedInsert(self, new_node): 
-          
-        # Special case for the empty linked list  
-        if self.head is None: 
-            new_node.next = self.head 
-            self.head = new_node 
-  
-        # # Special case for head at end 
-        # elif self.head.data >= new_node.data: 
-        #     new_node.next = self.head 
-        #     self.head = new_node 
-  
-        else : 
-            # Locate the node before the point of insertion 
-            current = self.head 
-            while(current.next is not None and
-                 current.next.data < new_node.data): 
-                current = current.next
-              
-            new_node.next = current.next
-            current.next = new_node 
+  def __init__(self, x):
+    self.value = x
+    self.next = None
 
 def insertValueIntoSortedLinkedList(l, value):
-
-    llist = linked_list()
-    for num in l:
-        llist.append(num)
-    llist.sortedInsert(ListNode(value))
-    #llist.insert_values(l)
-    llist.display()
-    
+    currentNode = l
+    while currentNode != None:
+        if currentNode.next == None:
+            currentNode.next = ListNode(value)
+            return l
+        currentNode = currentNode.next
+"""
 
 
 
