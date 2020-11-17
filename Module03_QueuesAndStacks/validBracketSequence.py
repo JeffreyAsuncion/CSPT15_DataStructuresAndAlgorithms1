@@ -70,6 +70,10 @@ def Compare(opening, closing):
     return False
 
 
+"""
+https://www.educative.io/edpresso/balanced-brackets-in-python
+"""
+
 sequence = "()"
 print(validBracketSequence(sequence))# = true;
 sequence = "()[]{}"
