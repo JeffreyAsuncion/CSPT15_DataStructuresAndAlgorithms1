@@ -154,7 +154,7 @@ def reverseNodesInKGroups(l,k):
         if counter % k == 0:  # for each k group    
             # set starting node to rev of starting node and l.next
             # (call to helper function)
-            starting_node = reverse(starting_node, l.next)
+            starting_node = reverse(starting_node, l.next) 
             
             # set l (the head) to the starting nodes next
             l = starting_node.next

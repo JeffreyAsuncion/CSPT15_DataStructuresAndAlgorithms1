@@ -57,8 +57,8 @@ def queueOnStacks(requests):
         #...
         # add to left stack
         left.push(x)
-        print(len(left.items))
-        print("push",x)
+        # print(len(left.items))
+        # print("push",x)
 
     def remove():
         #...
