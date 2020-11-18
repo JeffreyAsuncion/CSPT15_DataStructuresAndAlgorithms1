@@ -40,36 +40,59 @@ The maximum possible profit.
 
 """https://www.youtube.com/watch?v=PV97reU3Vig"""
 
+
+"""Brute Force Solution"""
+
+# def buyAndSellStock(prices):
+#     max_profit = 0
+#     for i in range(len(prices)):
+#         for j in range(i+1, len(prices)):
+#             profit = prices[j] - prices[i]
+#             if profit > max_profit:
+#                 max_profit = profit
+#     return max_profit
+
+
+
+
 def buyAndSellStock(prices):
     max_profit = 0
     # put a large value here and replace as you find a smaller one
-    smallest = float("inf")
+    smallest = prices[0]
     
-    for i in range(len(prices)):
+    for i in range(1, len(prices)):
+        
         # check if the 
-        if prices[i] > smallest:
-            # this replaces another if else for finding profit1 > profit2
-            # profit = max(profit, prices[i] - smallest)
-            profit = (prices[i] - smallest)
-            if profit > max_profit:
-                max_profit = profit
-                print(max_profit)
-        else:
+        if prices[i] < smallest:
             smallest = prices[i]
+            
+        elif (prices[i] - smallest) > max_profit:
+                max_profit = prices[i] - smallest
+
+        
             
     return max_profit
     
 
-
-
             
 prices = [6, 3, 1, 2, 5, 4]
 print(buyAndSellStock(prices)) # = 4.
-
-
 prices = [8, 5, 3, 1]
 print(buyAndSellStock(prices)) # = 0.
-
-
 prices = [3, 100, 1, 97]
 print(buyAndSellStock(prices)) # = 97.
+
+
+
+reasoning = """
+1. In order to get the Max Profit,
+we need the numbers that are furthest apart.
+Let us look for the lowest price.
+
+2. then we need the largest price after the lowest price 
+in order to make a MAX_PROFIT
+
+3. Compare with other profits and return MAX_PROFIT
+"""
+
+print(reasoning)
