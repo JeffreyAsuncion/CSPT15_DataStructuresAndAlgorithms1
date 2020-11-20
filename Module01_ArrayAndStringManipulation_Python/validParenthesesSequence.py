@@ -51,14 +51,14 @@ def validParenthesesSequence(s):
             if stack:
                 top_elem = stack.pop()
             else:
-                top_elem = "#"
+                top_elem = "#" # note this could be any symbol not a  bracket or parens
             
             if mapping[char] != top_elem:
                 return False
         else:
             stack.append(char)
     
-    return not stack
+    return not stack # if the stack it empty, then it is even AND PARENS are Valid
 
             
 
