@@ -31,6 +31,12 @@ All values of nums are unique.
 [output] integer
 """
 
+
+"""Brute force"""
+# def csSearchRotatedSortedArray(nums, target):
+#     return nums.index(target)
+
+
 def csSearchRotatedSortedArray(nums, target):
     if not nums:
         return -1
