@@ -45,13 +45,6 @@ Guaranteed constraints:
 Return l after inserting value into it, with the original sorting preserved.
 """
 
-class ListNode(object):
-  def __init__(self, x):
-    self.value = x
-    self.next = None
-
-
-
 # Singly-linked lists are already defined with this interface:
 class ListNode(object):
     def __init__(self, data=None):
@@ -101,8 +94,9 @@ def insertValueIntoSortedLinkedList(l, value):
 
     llist = linked_list()
     for num in l:
-        new_node = ListNode(num)
-        llist.sortedInsert(new_node)
+        llist.append(num)
+    new_node = ListNode(value)
+    llist.sortedInsert(new_node)
     llist.display()
 """
 # Singly-linked lists are already defined with this interface:

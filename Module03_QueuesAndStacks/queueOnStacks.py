@@ -23,7 +23,8 @@ Input/Output
 
 [input] array.string requests
 
-requests[i] can be "push <x>" or "pop". It is guaranteed that "pop" isn't applied to an empty queue.
+requests[i] can be "push <x>" or "pop". 
+It is guaranteed that "pop" isn't applied to an empty queue.
 
 Guaranteed constraints:
 1 ≤ requests.length ≤ 300,
